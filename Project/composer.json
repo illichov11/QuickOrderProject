@@ -1,0 +1,22 @@
+{
+    "name": "alevgel/module-project",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mage123",
+            "email": "info@mage123.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ALevel\\Project\\": ""
+        },
+        "files": [
+          "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Alevel::level"
+			 module="Alevel_Project"
+			 resource="Alevel::level"
+			 sortOrder="20"
+			 title="Alevel"/>
+		<add action="alevel_project/index/qoindex"
+			 id="Alevel_Project::quickorder_grid"
+			 module="Alevel_Project"
+			 parent="Alevel::level"
+			 resource="Alevel_Project::quickorder_grid"
+			 sortOrder="10"
+			 title="quickorder grid"/>
+		<add action="alevel_project/index/statusindex"
+			 id="Alevel_Project::status_grid"
+			 module="Alevel_Project"
+			 parent="Alevel::level"
+			 resource="Alevel_Project::status_grid"
+			 sortOrder="10"
+			 title="status grid"/>
+	</menu>
+</config>

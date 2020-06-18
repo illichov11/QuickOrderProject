@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Alevel\Project\Api\Data\StatusInterface"
+				type="Alevel\Project\Model\Status"/>
+	<preference for="Alevel\Project\Api\Data\QuickOrderInterface"
+				type="Alevel\Project\Model\QuickOrder"/>
+	<preference for="Alevel\Project\Api\StatusRepositoryInterface"
+				type="Alevel\Project\Repository\StatusRepository"/>
+	<preference for="Alevel\Project\Api\QuickOrderRepositoryInterface"
+				type="Alevel\Project\Repository\QuickOrderRepository"/>
+	<preference for="Alevel\Project\Api\Data\StatusSearchResultInterface"
+				type="Magento\Framework\Api\Search\SearchResult"/>
+	<preference for="Alevel\Project\Api\Data\QuickOrderSearchResultInterface"
+				type="Magento\Framework\Api\Search\SearchResult"/>
+		<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="alevel_project_order_listing_data_source" xsi:type="string">Alevel\Project\Model\ResourceModel\QuickOrder\Grid\Collection</item>
+				<item name="alevel_project_status_listing_data_source" xsi:type="string">Alevel\Project\Model\ResourceModel\Status\Grid\Collection</item>
+			</argument>
+		</arguments>
+		</type>
+	<type name="Alevel\Project\Api\Data\StatusInterface">
+		<plugin name="alevel_project_status_plugin"
+				type="Alevel\Project\Plugin\Model\StatusPlugin" />
+	</type>
+</config>
